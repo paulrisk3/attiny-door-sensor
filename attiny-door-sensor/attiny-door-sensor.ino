@@ -1,10 +1,21 @@
+const int led = 0;
+const int reedSwitch = 4;
+int reedStatus;
+
 void setup() {
-  pinMode(0, OUTPUT);
+  pinMode(led, OUTPUT);
+  pinMode(reedSwitch, INPUT);
+//  digitalWrite(pinLed, LOW);
 }
 
 void loop() {
-  digitalWrite(0, HIGH);
-  delay(1000);
-  digitalWrite(0, LOW);
-  delay(1000)
+  reedStatus = digitalRead(reedSwitch);
+  if (reedStatus == HIGH)
+  {
+    digitalWrite(pinLed, HIGH);
+  }
+  else
+  {
+    digitalWrite(pinLed, LOW);
+  }
 }
